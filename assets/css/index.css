@@ -1,3 +1,45 @@
 body{
   background-color: #C75D0E;
 }
+
+#books {
+  	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  	border-collapse: collapse;
+  	width: 80%;
+  	margin: auto;
+  	text-align: center;
+  	margin-top: 32px;
+  	margin-bottom: 32px;
+  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+#books td, #books th {
+  padding: 8px;
+}
+
+#books tr:nth-child(odd){background-color: #f3f2ee;}
+#books tr:nth-child(even){background-color: #fffce8;}
+
+#books tr:hover {background-color: #ddd;}
+
+#books th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #0a0a06;
+  color: white;
+}
+
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 5px;
+}
+
+table tr:last-child td:last-child {
+    border-bottom-right-radius: 5px;
+}
+
+table tr th:first-child {
+    border-top-left-radius: 5px;
+}
+table tr th:last-child {
+    border-top-right-radius: 5px;
+}
