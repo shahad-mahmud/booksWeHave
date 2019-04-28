@@ -35,7 +35,7 @@
 			echo '</script>'; 
 	    }else{
 
-	    	$target_dir = "uploads/authors/";
+	    	$target_dir = "uploads/books/";
 			$file_name = date('YmdHis') . '_' . uniqid(rand(),false);
 			$temp_name = $_FILES["author_image"]["tmp_name"];
 			$target_file_name = $target_dir . $file_name;
