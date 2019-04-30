@@ -115,7 +115,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Add new book | Books we have | Shahad Mahmud</title>
+	<title>New author | Books we have | Shahad Mahmud</title>
 
 	<link rel="stylesheet" type="text/css" href="assets/css/index.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/sidemenu.css">

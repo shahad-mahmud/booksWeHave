@@ -30,6 +30,11 @@ select {
   cursor: pointer;
 }
 
+.select2-container--default .select2-selection--multiple 
+.select2-selection__choice {
+    background-color: #1a239a;
+}
+
 input[type=file] {
   width: 100%;
   padding: 12px 20px;
