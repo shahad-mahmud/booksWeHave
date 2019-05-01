@@ -120,18 +120,16 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/index.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/sidemenu.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/formstyle.css">
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 </head>
 <body>
 	<div class="sidenav">
 		<a href="index.php">Home</a>
 	 	<a href="newbook.php">Add a new book</a>
-	 	<a href="newauthor.php">Add new author</a>
+	 	<a class="active" href="newauthor.php">Add new author</a>
 	  	<a href="#">Lend a book</a>
-	  	<a href="#">Wish list</a>
+	  	<a href="addtowishlist.php">Add to wish list</a>
+		<a href="wishlist.php">Wish list</a>
+	  	<a href="logout.php">Logout</a>
 	</div>
 
 	<div class="main">
