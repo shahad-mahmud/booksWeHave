@@ -22,7 +22,14 @@
 	}
 
 	//fills book array
-	$execute = $connection->query("SELECT books.`book_id`, `book_name`, `book_image` FROM `books`, `wish_list` WHERE books.book_id NOT LIKE wish_list.book_id");
+	$execute = $connection->query("SELECT
+									    books.`book_id`,
+									    books.`book_name`,
+									    books.`book_image`
+									FROM
+									    `books`
+									WHERE
+									    books.`book_id` NOT IN (SELECT wish_list.book_id FROM wish_list)");
 
 	while($row = $execute -> fetch_assoc()){
 		$bookId = $row['book_id'];
@@ -85,21 +92,54 @@
 				<th>বইয়ের নাম</th>
 				<th>লেখক</th>
 			</tr>
-			<?php foreach ($books as $key => $value) {
+			<?php 
+			$i = 100;
+			foreach ($books as $key => $value) {
+				$i = $i + 1;
 				?>
 
 				<tr>
-					<td><img src="<?php echo $images[$key]; ?>" alt="<?php echo $images[$key]; ?>" height="60" width="42"></td>
+					<td><img onclick="showImage('<?php echo $key; ?>')" id="<?php echo $key; ?>" src="<?php echo $images[$key]; ?>" alt="<?php echo $images[$key]; ?>" height="60" width="42"></td>
 					<td><?php echo $value; ?></td>
 					<td><?php echo $book_author[$key]; ?></td>
 				</tr>
 
 				<?php
-			} ?>
+
+			} 
+			?>
 			
 
 		</table>
 	</div>
+
+	<div id="myModal" class="modal">
+	  <span class="close">&times;</span>
+	  <img class="modal-content" id="img01">
+	 
+	</div>
+
+	<script type="text/javascript">
+		function showImage(id){
+			
+
+			var modal = document.getElementById("myModal");
+			var img = document.getElementById(id);
+			var modalImg = document.getElementById("img01");
+			var captionText = document.getElementById("caption");
+
+			modal.style.display = "block";
+		    modalImg.src = img.src;
+		    modalImg.style.width = img.style.width/img.style.height;
+
+		    var span = document.getElementsByClassName("close")[0];
+		    span.onclick = function() { 
+			  modal.style.display = "none";
+			}
+
+			console.log(id);
+		}
+	</script>
    
 </body>
 </html>
