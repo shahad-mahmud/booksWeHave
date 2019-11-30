@@ -205,9 +205,9 @@
    
 </body>
 
-<script>
-  $(document).ready(function() {
-      $('.author_class').select2();
-    });
-  </script>
+	<script>
+		$(document).ready(function() {
+			$('.author_class').select2();
+		});
+	</script>
 </html>

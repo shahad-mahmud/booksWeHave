@@ -45,8 +45,13 @@
 		$execute_authors_sql = $connection->query($authors_sql);
 
 		$authorName = "";
+		$i = 0;
 		while($row2 = $execute_authors_sql -> fetch_assoc()){
+			if($i > 0){
+				$authorName = $authorName. ",";
+			}
 			$authorName = $authorName. " ". $authors[$row2['author_id']];
+			$i = $i + 1;
 		}
 
 		$book_author[$bookId] = $authorName;
@@ -57,6 +62,10 @@
 <head>
 	<meta charset="utf-8">
 	<title>Books we have | Shahad Mahmud</title>
+
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="assets/css/index.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/sidemenu.css">
@@ -86,6 +95,27 @@
 	</div>
 
 	<div class="main">
+
+		<div class="counter">
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+		                <div class="employees">
+		                    <p class="counter-count">879</p>
+		                    <p class="employee-p">Employee</p>
+		                </div>
+		            </div>
+
+		            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+		                <div class="customer">
+		                    <p class="counter-count">954</p>
+		                    <p class="customer-p">Customer</p>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+
 		<table id="books">
 			<tr>
 				<th>বই</th>
@@ -139,6 +169,21 @@
 
 			console.log(id);
 		}
+	</script>
+
+	<script type="text/javascript">
+		
+		$('.counter-count').each(function () {
+        $(this).prop('Counter',0).animate({
+            Counter: $(this).text()
+        }, {
+            duration: 5000,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
+        });
+    });
 	</script>
    
 </body>
