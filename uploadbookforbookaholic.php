@@ -56,7 +56,7 @@
 			if($imageFileType == "jpg" || $imageFileType == "jpeg"){
 				imagejpeg($newImageFrame, $target_file, 30);
 			}else if($imageFileType == "png"){
-				imagepng($newImageFrame, $target_file, 30);
+				imagepng($newImageFrame, $target_file, 9);
 			}
 
 			echo($file_name_for_db);
