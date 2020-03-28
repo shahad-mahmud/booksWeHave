@@ -58,7 +58,7 @@
 
 				<a href="newbook.php">Add a new book</a>
 			  	<a href="newauthor.php">Add new author</a>
-			  	<a href="#">Lend a book</a>
+			  	<a href="lend.php">Lend a book</a>
 			  	<a href="addtowishlist.php">Add to wish list</a>
 			  	<a class="active" href="wishlist.php">Wish list</a>
 			  	<a href="logout.php">Logout</a>

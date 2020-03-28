@@ -13,12 +13,16 @@
 	$book_author = array();
 	$authors = array();
 
+	$totalBooks = 0;
+	$totalAuthors = 0;
+
 	//fill authors array
 	$author_sql = "SELECT `author_id`,`author_name` FROM `authors` ORDER BY `author_name` ASC";
 	$execute = $connection->query($author_sql);
 
 	while($row = $execute -> fetch_assoc()){
 		$authors[$row['author_id']] = $row['author_name'];
+		$totalAuthors = $totalAuthors+1;
 	}
 
 	//fills book array
@@ -34,6 +38,7 @@
 	while($row = $execute -> fetch_assoc()){
 		$bookId = $row['book_id'];
 		$books[$bookId] = $row['book_name'];
+		$totalBooks = $totalBooks+1;
 
 		if($row['book_image'] == ""){
 			$images[$bookId] = "uploads/books/default.png";
@@ -79,7 +84,7 @@
 
 				<a href="newbook.php">Add a new book</a>
 			  	<a href="newauthor.php">Add new author</a>
-			  	<a href="#">Lend a book</a>
+			  	<a href="lend.php">Lend a book</a>
 			  	<a href="addtowishlist.php">Add to wish list</a>
 			  	<a href="wishlist.php">Wish list</a>
 			  	<a href="logout.php">Logout</a>
@@ -101,15 +106,15 @@
 		        <div class="row">
 		            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 		                <div class="employees">
-		                    <p class="counter-count">879</p>
-		                    <p class="employee-p">Employee</p>
+		                    <p class="counter-count"><?php echo $totalBooks ?></p>
+		                    <p class="employee-p">Total books</p>
 		                </div>
 		            </div>
 
 		            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 		                <div class="customer">
-		                    <p class="counter-count">954</p>
-		                    <p class="customer-p">Customer</p>
+		                    <p class="counter-count"><?php echo $totalAuthors ?></p>
+		                    <p class="customer-p">Authors</p>
 		                </div>
 		            </div>
 		        </div>
